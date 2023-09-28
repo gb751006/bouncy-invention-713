@@ -2,7 +2,7 @@ const mongoose=require("mongoose");
 
 const userSchema=mongoose.Schema({
     "username":String,
-    "email":String,
+    "email":{type:String,required:true,unique:true},
     "gender":String,
     "age":Number,
     "password":String
