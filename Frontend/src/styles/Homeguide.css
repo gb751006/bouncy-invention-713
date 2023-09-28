@@ -1,0 +1,109 @@
+.guideMain {
+  width: 80%;
+  margin: auto;
+  margin-top: 60px;
+  text-align: center;
+}
+
+.guideMain h1 {
+  /* color: #ffffff; */
+  font-size: 26px;
+  /* width: 100%; */
+  font-weight: 600;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  background: #3ecf5b;
+  background: repeating-radial-gradient(
+    circle farthest-corner at center center,
+    #3ecf5b 0%,
+    #205726 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.steps {
+  /* border: 1px solid #c5806a; */
+  display: flex;
+  width: 100%;
+  gap: 20px;
+  margin-top: 60px;
+}
+
+/* .steps > p {
+  color: rgb(151, 0, 0);
+} */
+
+.steps > div {
+  width: 33%;
+}
+
+
+.num {
+  text-align: center;
+
+  display: flex;
+  /* color: white; */
+  font-size: larger;
+  font-weight: bolder;
+  /* width: 40px; */
+
+  /* border-radius: 50%; */
+  height: 40px;
+  /* background: rgb(2, 0, 36);
+  background: linear-gradient(
+    90deg,
+    rgb(171, 170, 178) 0%,
+    rgb(122, 201, 113) 15%,
+    rgb(197, 228, 234) 100%
+  ); */
+}
+
+.num > div {
+  width: 100%;
+  text-align: center;
+  margin: auto;
+}
+
+.hedG {
+  margin-top: 40px;
+  margin-bottom: -10px;
+  font-size: larger;
+  font-size: larger;
+  font-weight: bolder;
+  font-family: Montserrat;
+}
+
+.steps > div {
+  
+  padding: 10px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+p {
+  color: rgb(78, 73, 73);
+  padding: 10px;
+}
+
+/* Media Query for Small Screens */
+@media screen and (max-width: 480px) {
+  .guideMain {
+    width: 100%;
+  }
+
+  .steps {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .steps > div {
+    width: auto;
+    flex: 0 0 100%;
+  }
+
+  .num {
+    width: 30px;
+    height: 30px;
+    font-size: medium;
+  }
+}

@@ -3,11 +3,21 @@ import Navbar from "../Components/Navbar";
 import banner from "../Images/18733161_Business team climbing giant handshake with support of leader.jpg";
 import Footer from "./Footer";
 import logo from "../Images/DonateForChange_logo-removebg-preview.png";
+import Homeguide from "../Pages/Homeguide"
+import Assure from "../Pages/Assures";
+
 
 const Home = () => {
   return (
     <DIV>
       <Navbar />
+      <section className="hero">
+        <div className="content">
+          <h1>Donate For Change.</h1>
+          <p>Your Little Help can do Miracle</p>
+          <a href="#Home">👉Start Now </a>
+        </div>
+      </section>
       <div className="banner">
         {/* <section className="hero1">
           
@@ -20,16 +30,16 @@ const Home = () => {
             </a>
           </div>
         </section> */}
-
-        <img src={banner} alt="" />
+          <Homeguide/>
+        {/* <img src={banner} alt="" /> */}
       </div>
 
       {/************************   section-start  ********************* */}
-      <div className="giftSec">
-        {/* <img src={gift} alt="" /> */}
+      {/* <div className="giftSec"> */}
+      {/* <img src={gift} alt="" /> */}
 
-        <div className="gifttext">
-          <p className="giftCapt">Lorem</p>
+      {/* <div className="gifttext"> */}
+      {/* <p className="giftCapt">Lorem</p>
           <p className="giftdesc">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum,
             error similique aperiam magni ex modi!
@@ -37,13 +47,13 @@ const Home = () => {
 
           <p className="shoText" style={{ color: "#dfdfdf" }}>
             LOREM &nbsp;&nbsp; L O R E M
-          </p>
-        </div>
-      </div>
-
+          </p> */}
+      {/* </div> */}
+      {/* </div> */}
+    
       {/************************  about-section-start  ********************* */}
-
-      <div className="about">
+     
+      {/* <div className="about">
         <div className="abtMSec">
           <div className="abtText">
             <div className="abthead">
@@ -70,15 +80,15 @@ const Home = () => {
               minima laborum dignissimos impedit reiciendis veniam quo, sit vero
               sapiente sunt molestiae eos.
             </p>
-          </div>
-          <div className="abtImg">{/* <img src={abtImg} alt="" /> */}</div>
-        </div>
-      </div>
+          </div> */}
+          {/* <div className="abtImg"><img src={abtImg} alt="" /></div> */}
+        {/* </div> */}
+      {/* </div> */}
 
       {/************************  about-section-end  ********************* */}
 
       {/********************* * start-section ***************/}
-
+     <Assure/>
       <div className="arrange">
         <div className="arrangeSec">
           <div className="arrimg">{/* <img src={meetImg} alt="" /> */}</div>
