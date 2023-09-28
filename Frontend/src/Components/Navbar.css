@@ -78,9 +78,9 @@ body {
   position: absolute;
   /* margin-top: 50px; */
   left: -10px;
-  margin-left: 10px;
-  width: 100%;
-  /* height: 100%; */
+  margin-left: 80px;
+  width: 20%;
+  height: 25vh;
   /* border: 2px solid green; */
   /* top: 80px; */
   opacity: 0;
@@ -88,7 +88,7 @@ body {
   transition: all 0.3s ease;
 }
 .mega-menu .content {
-  background: #fff;
+  background: rgba(255, 255, 255, 0.481);
   position: relative;
 
   box-shadow: 1px 1px 25px -4px rgba(181, 181, 181, 0.54);
@@ -245,7 +245,7 @@ body {
 
 /*--------- ----------search----------------- */
 
-.search-div {
+/* .search-div {
   height: 35px;
   padding: 5px 20px;
 }
@@ -257,7 +257,7 @@ input::placeholder {
 input:focus {
   border: 1px solid black;
   background-color: white;
-}
+} */
 #nav-2 {
   display: flex;
   justify-content: space-between;

@@ -4,6 +4,8 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { Box } from "@chakra-ui/layout";
 import "./Navbar.css";
+import { Input } from "@chakra-ui/react";
+import { Icon } from "@chakra-ui/react";
 
 const Navbar = () => {
   const [colorChange, setColorchange] = useState(false);
@@ -54,14 +56,20 @@ const Navbar = () => {
                   </div>
                 </div>
               </li>
+              <Input placeholder="🔍Search for fundraiser" width="21%" />
               <li>
                 <img src={logo} />
               </li>
-              <li> Sign Up</li>
+              <li>
+                <Link>Login</Link>
+              </li>
+              <li>
+                <Link>Sign Up</Link>
+              </li>
 
-              <Box className="Login">
+              {/* <Box className="Login">
                 <Box>Login</Box>
-              </Box>
+              </Box> */}
             </ul>
           </nav>
         </header>
@@ -77,13 +85,14 @@ export default Navbar;
 const DIV = styled.section`
   
    li > img { 
-    /* margin-left:50px; */
+    margin-right:0px;
     /* border:1px solid yellow; */
-    width: 45%;
-    margin:auto;
+    width: 40%;
+    /* margin:auto; */
   } 
   .mega-links{
-    display:flex
+    display:flex;
+    /* border:1px solid red; */
   }
   .mobile-logo {
     width: 60%;
