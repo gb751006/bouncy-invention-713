@@ -11,8 +11,12 @@ const userRouter=express.Router();
 userRouter.post("/register",(req,res)=>{
     const {username,email,gender,age,password}=req.body;
 
+    if(!password || password.length<8 || !/[A-Z]/.test(password) || !/[1-9]/.test(password) || !/[~`!@#$%^&*()_+\-=\[\]{};':"\\,./<>?]/.test(password)){
+        return res.status(400).send({"error":"Password must be at least 8 charcter long and contain at least one uppercase character, one number and one special character"});
+    }
+
     try {
-     bcrypt.hash(password, 6, async(err, hash)=> {
+     bcrypt.hash(password, 6, async(err, hash)=>{
          if(hash){
              const user=new UserModel({username,email,gender,age,password:hash})
              await user.save();
