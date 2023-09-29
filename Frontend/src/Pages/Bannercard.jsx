@@ -9,7 +9,7 @@ const Bannercard = () => {
   return (
     <div className="CBMain">
       <div>
-        <p>Make your Impact</p>
+        <p>Make your Impact</p>y
         <h2>Fundraise For ....</h2>
       </div>
       <div>
