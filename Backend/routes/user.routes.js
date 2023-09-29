@@ -37,7 +37,7 @@ userRouter.post("/login", async(req,res)=>{
     try {
         const user=await UserModel.findOne({email});
         bcrypt.compare(password, user.password,(err, result)=> {
-            const token=jwt.sign({ course: 'nxm'}, process.env.secretCode);
+            const token=jwt.sign({ userId:user._id,username:user.username}, process.env.secretCode);
             if(result){
                 res.status(200).json({"msg":"User login successfully!!",token});
             }else{
@@ -68,4 +68,4 @@ userRouter.get("/logout",async (req,res)=>{
     }
 })
 
-module.exports={userRouter}
+module.exports={userRouter};
