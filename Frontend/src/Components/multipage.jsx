@@ -64,7 +64,55 @@ const Form1 = ({handleState}) => {
         </Select>
       </FormControl>
 
-     
+      <FormControl as={GridItem} colSpan={6}>
+        {/* <FormLabel
+          htmlFor="street_address"
+          fontSize="sm"
+          fontWeight="md"
+          color="gray.700"
+          _dark={{
+            color: 'gray.50',
+          }}
+          mt="2%">
+          Street address
+        </FormLabel> */}
+        {/* <Input
+          type="text"
+          name="street_address"
+          id="street_address"
+          autoComplete="street-address"
+          focusBorderColor="brand.400"
+          shadow="sm"
+          size="sm"
+          w="full"
+          rounded="md"
+        /> */}
+      </FormControl>
+
+      {/* <FormControl as={GridItem} colSpan={[6, 6, null, 2]}>
+        <FormLabel
+          htmlFor="city"
+          fontSize="sm"
+          fontWeight="md"
+          color="gray.700"
+          _dark={{
+            color: 'gray.50',
+          }}
+          mt="2%">
+          City
+        </FormLabel>
+        <Input
+          type="text"
+          name="city"
+          id="city"
+          autoComplete="city"
+          focusBorderColor="brand.400"
+          shadow="sm"
+          size="sm"
+          w="full"
+          rounded="md"
+        />
+      </FormControl> */}
 
       <FormControl as={GridItem} colSpan={[6, 3, null, 2]}>
         <FormLabel
@@ -229,7 +277,8 @@ const Form4 = () => {
         maxW={'7xl'}
         columns={{ base: 1, md: 2 }}
         spacing={{ base: 5, lg: 15 }}
-        py={{ base: 10, sm: 20, lg: 32 }}>
+        // py={{ base: 10, sm: 20, lg: 32 }}
+        >
         <Stack spacing={{ base: 10, md: 20 }}>
           <Heading
             lineHeight={1.1}
@@ -252,6 +301,7 @@ const Form4 = () => {
           maxW={{ lg: 'lg' }}>
           
           <Box as={'form'} mt={10}>
+            {/* <img src="https://www.gofundme.com/_next/static/images/yourself-f0b50d399c2485c1698f82eba958108f.png" alt="" /> */}
           <label for="poster">drag or upload your photo here:</label>
 
 <input type="file" name="poster" accept="image/png, image/jpeg"  />
@@ -278,14 +328,12 @@ const Form4 = () => {
     </Box>
   )
 }
-const Form5 = () => {
- 
-}
+
 
 export default function Multistep() {
   const toast = useToast()
   const [step, setStep] = useState(1)
-  const [progress, setProgress] = useState(20)
+  const [progress, setProgress] = useState(25)
   const [data,setData]=useState({})
   
   const handleState=(name,value)=>{
@@ -309,14 +357,14 @@ export default function Multistep() {
         m="10px auto"
         as="form">
         <Progress hasStripe value={progress} mb="5%" mx="5%" isAnimated></Progress>
-        {step === 1 ? <Form1 handleState={handleState} /> : step === 2 ? <Form2 handleState={handleState} />: step === 3 ? <Form3 handleState={handleState} />: step === 4 ? <Form4 handleState={handleState} /> : <Form5 handleState={handleState} />}
+        {step === 1 ? <Form1 handleState={handleState} /> : step === 2 ? <Form2 handleState={handleState} />: step === 3 ? <Form3 handleState={handleState} />:  <Form4 handleState={handleState} />  }
         <ButtonGroup mt="5%" w="100%">
           <Flex w="100%" justifyContent="space-between">
             <Flex>
               <Button
                 onClick={() => {
                   setStep(step - 1)
-                  setProgress(progress - 20)
+                  setProgress(progress - 25)
                 }}
                 isDisabled={step === 1}
                 colorScheme="teal"
@@ -327,13 +375,13 @@ export default function Multistep() {
               </Button>
               <Button
                 w="7rem"
-                isDisabled={step === 5}
+                isDisabled={step === 4}
                 onClick={() => {
                   setStep(step + 1)
                   if (step === 5) {
                     setProgress(100)
                   } else {
-                    setProgress(progress + 20)
+                    setProgress(progress + 25)
                   }
                 }}
                 colorScheme="teal"
@@ -341,7 +389,7 @@ export default function Multistep() {
                 Next
               </Button>
             </Flex>
-            {step === 5 ? (
+            {step === 4 ? (
               <Button
                 w="7rem"
                 colorScheme="red"
