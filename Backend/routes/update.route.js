@@ -1,15 +1,34 @@
 const express=require("express");
+const { UpdateModel } = require("../model/update.model");
+const { auth } = require("../middleware/auth.middleware");
 
 
-const userRouter=express.Router();
+const updateRouter=express.Router();
 
 
-userRouter.post("/add",(req,res)=>{
-    res.status.send({"msg":"post has been added successfully!!"})
+updateRouter.post("/add",auth,async(req,res)=>{
+    const payload=req.body;
+
+    try {
+        const update= new UpdateModel(payload);
+        await update.save();
+        res.status(200).send({"msg":"update has been added successfully!!"})
+    } catch (error) {
+        res.status(400).json({error:error});
+    }
+    
 })
 
-userRouter.delete("/delete",(req,res)=>{
-    res.status.send({"msg":"post has been deleted successfully!!"})
+updateRouter.delete("/delete/:id",auth,async(req,res)=>{
+    const {id}=req.params;
+
+    try {
+        await PostModel.findByIdAndDelete({"_id":id});
+        res.status.send({"msg":"update has been deleted successfully!!"})
+    } catch (error) {
+        res.status(400).send({"err":error});
+    }
 })
 
-module.exports={userRouter};
+
+module.exports={updateRouter};

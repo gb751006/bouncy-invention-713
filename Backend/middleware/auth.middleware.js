@@ -13,7 +13,9 @@ const auth=async (req,res,next)=>{
         }else{
             jwt.verify(token, process.env.secretCode,(err, decoded)=> {
                 if(decoded){
-                   next();
+                    req.body.userId=decoded.userId;
+                    req.body.username=decoded.username;
+                    next();
                 }else{
                     res.status(200).json({error:err});
                 }
