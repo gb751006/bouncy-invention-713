@@ -5,6 +5,7 @@ import Footer from "./Footer";
 import logo from "../Images/DonateForChange_logo-removebg-preview.png";
 import Homeguide from "../Pages/Homeguide"
 import Assure from "../Pages/Assures";
+import Bannercard from "../Pages/Bannercard";
 
 
 const Home = () => {
@@ -89,6 +90,7 @@ const Home = () => {
 
       {/********************* * start-section ***************/}
      <Assure/>
+     <Bannercard/>
       <div className="arrange">
         <div className="arrangeSec">
           <div className="arrimg">{/* <img src={meetImg} alt="" /> */}</div>
