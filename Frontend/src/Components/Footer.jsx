@@ -53,6 +53,11 @@ export default function Footer() {
     <Box
       bg={useColorModeValue("gray.50", "gray.900")}
       color={useColorModeValue("gray.700", "gray.200")}
+      style={{
+        background: " rgb(238,174,202)",
+        background:
+          "radial-gradient(circle, rgba(238,174,202,0) 0%, rgba(197,255,206,1) 100%)",
+      }}
     >
       <Container as={Stack} maxW={"6xl"} py={10}>
         <SimpleGrid
