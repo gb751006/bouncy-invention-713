@@ -1,21 +1,24 @@
-const express=require("express");
+const express = require("express");
+const cors = require("cors")
 const { connection } = require("./db");
 const { userRouter } = require("./routes/user.routes");
-const { updateRouter } = require("./routes/update.route");
+const { postRouter } = require("./routes/post.route");
+const { fundRouter } = require("./routes/fund.route");
 require("dotenv").config();
 
-const app=express();
+const app = express();
 app.use(express.json());
+app.use(cors())
 
-
-app.get("/",(req,res)=>{
-    res.status(200).json({"msg":"Home Page"});
+app.get("/", (req, res) => {
+    res.status(200).json({ "msg": "Home Page" });
 })
 
-app.use("/users",userRouter);
-app.use("/update",updateRouter);
+app.use("/users", userRouter);
+app.use("/posts", postRouter);
+app.use("/funds", fundRouter);
 
-app.listen(process.env.PORT,async()=>{
+app.listen(process.env.PORT, async () => {
     try {
         await connection;
         console.log(`DB is connected`);
