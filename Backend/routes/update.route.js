@@ -23,8 +23,8 @@ updateRouter.delete("/delete/:id",auth,async(req,res)=>{
     const {id}=req.params;
 
     try {
-        await PostModel.findByIdAndDelete({"_id":id});
-        res.status.send({"msg":"update has been deleted successfully!!"})
+        await UpdateModel.findByIdAndDelete({"_id":id});
+        res.status(200).send({"msg":"update has been deleted successfully!!"})
     } catch (error) {
         res.status(400).send({"err":error});
     }
