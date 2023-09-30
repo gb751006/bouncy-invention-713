@@ -19,7 +19,7 @@ fundRouter.post("/add", auth, async (req, res) => {
 
 })
 
-fundRouter.get("/", auth, async (req, res) => {
+fundRouter.get("/", async (req, res) => {
     const query = req.query;
 
     try {
@@ -30,6 +30,31 @@ fundRouter.get("/", auth, async (req, res) => {
     }
 
 })
+
+fundRouter.get("/private",auth, async (req, res) => {
+
+
+    try {
+        const funds = await FundModel.find({userId:req.body.userId});
+        res.status(200).json(funds);
+    } catch (error) {
+        res.status(400).json({ error: error });
+    }
+
+})
+
+fundRouter.get("/:id",async (req, res) => {
+    const { id } =req.params;
+    try {
+        const funds = await FundModel.findOne({"_id":id});
+        res.status(200).json(funds);
+    } catch (error) {
+        res.status(400).json({ error: error });
+    }
+
+})
+
+
 
 fundRouter.patch("/update/:id", auth, async (req, res) => {
     const { id } = req.params;
