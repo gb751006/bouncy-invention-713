@@ -2,14 +2,14 @@ import React from "react";
 import "../styles/bannercard.css";
 import yourself from "../Images/start-yourself@2x.png";
 import family from "../Images/start-friends-Family@2x.png";
-import charity from "../Images/start-yourself@2x.png";
+import charity from "../Images/start-charity@2x.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 const Bannercard = () => {
   return (
     <div className="CBMain">
       <div>
-        <p>Make your Impact</p>y
+        <p>Make your Impact</p>
         <h2>Fundraise For ....</h2>
       </div>
       <div>
