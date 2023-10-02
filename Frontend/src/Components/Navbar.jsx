@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { Box } from "@chakra-ui/layout";
 import "./Navbar.css";
-import { Input } from "@chakra-ui/react";
+import { ChakraProvider, Input } from "@chakra-ui/react";
 import { Icon } from "@chakra-ui/react";
 
 const Navbar = () => {
@@ -18,6 +18,7 @@ const Navbar = () => {
   };
   window.addEventListener("scroll", changeNavbarColor);
   return (
+    
     <DIV>
       {/* //  */}
       <nav className={colorChange ? "navbar colorChange" : "navbar"}>
@@ -100,7 +101,7 @@ const DIV = styled.section`
   .menu-items{
     /* border:1px solid blue; */
     /* display:flex */
-    align-items:center
+    align-items:center;
     justify-content:space-evenly;
   }
   .navbar {

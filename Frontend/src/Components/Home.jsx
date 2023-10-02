@@ -32,7 +32,7 @@ const Home = () => {
       {/********************* * section-end ***************/}
 
       {/* <Footer /> */}
-      <Footer />
+      {/* <Footer /> */}
     </DIV>
   );
 };
