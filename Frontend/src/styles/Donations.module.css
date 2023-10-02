@@ -50,11 +50,21 @@
   transform: scale(1.1);
 }
 
+.username {
+  display: flex;
+  margin-top: 5px;
+  gap: 10px;
+}
+.lg{
+    margin-top: 5px;
+    font-size: xx-large;
+}
+
 .content {
   flex: 1;
 }
 
-h3 {
+.h3 {
   font-size: 1.8rem;
   margin: 0;
   margin-bottom: 10px;
