@@ -1,10 +1,10 @@
 import React from "react";
-import "../styles/assure.css"
+import styles from "../styles/assure.module.css"
 
 const Assure = () => {
   return (
     <div>
-      <div className="bannerMain">
+      <div className={styles.bannerMain}>
         <h3>✅ Trust & Saftey Assurance</h3>
         <h1>We have thousands of life changing story !..</h1>
         <div>

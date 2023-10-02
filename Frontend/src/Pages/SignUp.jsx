@@ -22,7 +22,7 @@ import {
 import { FaEye, FaEyeSlash } from "react-icons/fa"; // Import eye icons
 
 const SignupPage = () => {
-  const navigate=useNavigate()
+  const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
   const toast = useToast();
 
@@ -111,9 +111,9 @@ const SignupPage = () => {
           isClosable: true,
         });
         // You can redirect the user to a login page or perform any other action here
-        setTimeout(()=>{
-navigate("/login")
-        },3000)
+        setTimeout(() => {
+          navigate("/login");
+        }, 3000);
       } else {
         // Handle server errors
         toast({
