@@ -23,8 +23,7 @@ const FundPage = () => {
           <div className={fundStyle["block1"]}>
           <p className={fundStyle["heading"]}>{fundDetails.Type}</p>
           {fundDetails.image && (
-            // <img className={fundStyle["img"]} src={fundDetails.image} alt="Fund" />
-            <img className={fundStyle["img"]} src={"https://lssparle.org.in/wp-content/uploads/2021/10/hub_12_18_charity-Hero-1200x900-1.jpg"} alt="Fund" />
+            <img className={fundStyle["img"]} src={fundDetails.image} alt="Fund" />
           )}
           </div>
          <div>
