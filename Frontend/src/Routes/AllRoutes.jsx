@@ -10,6 +10,7 @@ import FundPage from '../Pages/FundPage';
 import SignupPage from '../Pages/SignUp';
 import LoginPage from '../Pages/Login';
 import Multistep from '../Components/multipage';
+import PrivateRoute from './PrivateRoute';
 
 const AllRoutes = () => {
     const appRoute=createBrowserRouter([
@@ -19,7 +20,7 @@ const AllRoutes = () => {
         },
         {
           path: "/sidebar",
-          element: <Sidebar />,
+          element: <PrivateRoute><Sidebar /></PrivateRoute>,
           children: [
             {
               path: "dashboard",
@@ -41,7 +42,7 @@ const AllRoutes = () => {
         },
         {
           path: "/fundpage/:id",
-          element:<FundPage />,
+          element:<PrivateRoute><FundPage /></PrivateRoute>,
         },
         {
           path: "/register",
@@ -53,7 +54,7 @@ const AllRoutes = () => {
         },
         {
           path: "/donationform",
-          element:<Multistep />,
+          element:<PrivateRoute><Multistep /></PrivateRoute>,
         },
       ]);
       return (
