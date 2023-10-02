@@ -11,13 +11,13 @@ const Updates = () => {
     dataFetching();
   }, []);
 
-  const dataFetching=()=>{
-    fetch("http://localhost:8080/posts",{
-      method:"GET",
+  const dataFetching = () => {
+    fetch("http://localhost:8080/posts", {
+      method: "GET",
       headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${localStorage.getItem("token")}`
-        }
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
+      },
     })
       .then((response) => response.json())
       .then((data) => {
@@ -25,7 +25,7 @@ const Updates = () => {
         console.log(data);
       })
       .catch((error) => console.error("Error fetching updates:", error));
-  }
+  };
 
   const handleStatusChange = (event) => {
     setStatus(event.target.value);
@@ -40,29 +40,29 @@ const Updates = () => {
     const postData = { post: status, image: imageURL, timestamps: timestamp };
 
     fetch("http://localhost:8080/posts/add", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: `Bearer ${localStorage.getItem("token")}`,
-    },
-    body: JSON.stringify(postData),
-  })
-    .then((response) => response.json())
-    .then((data) => {
-      setUpdates((prevUpdates) => [...prevUpdates, data]);
-      dataFetching();
-      setStatus("");
-      setImageURL("");
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
+      },
+      body: JSON.stringify(postData),
     })
-    .catch((error) => console.error("Error posting status:", error));
-};
+      .then((response) => response.json())
+      .then((data) => {
+        setUpdates((prevUpdates) => [...prevUpdates, data]);
+        dataFetching(); // Fetch updates again to get the updated list
+        setStatus("");
+        setImageURL("");
+      })
+      .catch((error) => console.error("Error posting status:", error));
+  };
 
   const handleDeleteStatus = (updateId) => {
     fetch(`http://localhost:8080/posts/delete/${updateId}`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer ${localStorage.getItem("token")}`
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
       },
     })
       .then((response) => {
@@ -80,7 +80,14 @@ const Updates = () => {
       .catch((error) => console.error("Error deleting status:", error));
   };
 
-  const formatDate = (date) => {
+  const formatDate = (dateStr) => {
+    console.log("Received date string:", dateStr);
+  
+    if (!dateStr) {
+      console.log("Date string is undefined");
+      return "Date not available";
+    }
+  
     const options = {
       year: "numeric",
       month: "short",
@@ -89,8 +96,19 @@ const Updates = () => {
       minute: "numeric",
       second: "numeric",
     };
-    return date.toLocaleDateString(undefined, options);
+  
+    const parsedDate = new Date(dateStr);
+  
+    if (isNaN(parsedDate.getTime())) {
+      console.log("Invalid date string:", dateStr);
+      return "Invalid Date";
+    }
+  
+    return parsedDate.toLocaleDateString(undefined, options);
   };
+  
+  
+  
 
   return (
     <div className={stylesUpdate.container}>
@@ -129,12 +147,12 @@ const Updates = () => {
             )}
             <div>
               <div className={stylesUpdate["username"]}>
-                <FaUserCircle className={stylesUpdate["lg"]}/>
+                <FaUserCircle className={stylesUpdate["lg"]} />
                 <h3>{update.username}</h3>
               </div>
               <p className={stylesUpdate["updateText"]}>{update.post}</p>
               <p className={stylesUpdate["updateTime"]}>
-                Posted at: {formatDate(new Date(update.timestamps))}
+                Posted at: {formatDate(update.createdAt)}
               </p>
               <button
                 onClick={() => handleDeleteStatus(update._id)}

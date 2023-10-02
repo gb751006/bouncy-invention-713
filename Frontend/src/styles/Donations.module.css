@@ -17,7 +17,7 @@
   }
   
   .fund-card img {
-    max-width: 1000px;
+    width: 90%;
     height: auto;
     border-radius: 8px;
     margin-right: 20px;
@@ -68,6 +68,7 @@
     margin-top: 20px;
     padding: 20px;
     width: 1000px;
+    gap: 20px;
     /* transition: transform 0.2s ease-in-out;
     animation: shake 0.5s ease-in-out; */
   }
