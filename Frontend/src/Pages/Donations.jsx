@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import donationStyle from '../styles/Donations.module.css';
+import { FaUserCircle } from "react-icons/fa";
 
 const Donations = () => {
   const [funds, setFunds] = useState([]);
@@ -22,7 +23,10 @@ const Donations = () => {
             {fund.image && <img src={fund.image} alt="Fund" />}
             </div>
             <div className={donationStyle['funds']}>
-            <h3>{fund.username}</h3>
+            <div className={donationStyle["username"]}>
+                <FaUserCircle className={donationStyle["lg"]} />
+                <h3 className={donationStyle["h3"]}>{fund.username}</h3>
+              </div>
             <p className={donationStyle["info"]}>Fund for: {fund.Type}</p>
             <p className={donationStyle["info"]}>Fund goal: {fund.amount}</p>
             <p className={donationStyle["info"]}>Fund Type: {fund.fundType}</p>
