@@ -344,10 +344,11 @@ export default function Multistep() {
     }); 
   }
   const handlesumbit=()=>{
-    fetch("http://localhost:8080/posts/add",{
+    fetch("http://localhost:8080/funds/add",{
       method:"POST",
       headers: {
           "Content-Type": "application/json",
+          Authorization: `Bearer ${localStorage.getItem("token")}`
         },
         body:JSON.stringify(data)
   })
@@ -362,7 +363,7 @@ export default function Multistep() {
       position:"top"
     }),
   setTimeout(() => {
-    navigate("/")
+    navigate("/sidebar/dashboard")
   }, 3000)
     )
   .catch(err=>console.log(err))

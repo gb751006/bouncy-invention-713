@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import {
   Badge,
   Button,
@@ -11,6 +11,22 @@ import {
   useColorModeValue,
 } from '@chakra-ui/react'
 const Dashboard = () => {
+
+  const [funds, setFunds] = useState([]);
+
+  useEffect(() => {
+    fetch('http://localhost:8080/funds/private',{
+      method:"GET",
+      headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${localStorage.getItem("token")}`
+        }
+    })
+      .then((response) => response.json())
+      .then((data) => console.log(data))
+      .catch((error) => console.error('Error fetching funds:', error));
+  }, []);
+
   return (
    <div style={{marginTop:"100px"}}>
      <Center  ml={20} py={6}>
@@ -92,6 +108,9 @@ const Dashboard = () => {
               }}>
              View
             </Button>
+            {/* <Link className={donationStyle["btn"]} to={`/fundpage/${fund._id}`}>
+              <button>View</button>
+            </Link> */}
           </Stack>
         </Stack>
       </Stack>
