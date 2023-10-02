@@ -1,14 +1,18 @@
 import logo from "./logo.svg";
 import "./App.css";
 import Home from "./Components/Home";
+import Navbar from "./Components/Navbar";
+import Footer from "./Components/Footer";
+import AllRoutes from "./Routes/AllRoutes";
+import { ChakraProvider } from "@chakra-ui/react";
 
 function App() {
   return (
-    <div className="App">
-      {/* <h1>Donate for Change</h1> */}
-      <Home />
-    </div>
-  );
+    <ChakraProvider>
+    <AllRoutes/>
+    <Footer/>
+    </ChakraProvider>
+  )
 }
 
 export default App;

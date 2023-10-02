@@ -1,0 +1,105 @@
+/* Updates.css */
+
+.container {
+  background-color: #f2f2f2;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-top: 50px;
+  width: 90%;
+  margin-left: 100px;
+  margin-top: 100px;
+}
+
+.username {
+  display: flex;
+  margin-top: 5px;
+}
+.lg{
+    margin-top: -3px;
+    font-size: xx-large;
+}
+
+.title3 {
+  color: #43a047;
+  font-size: 80px;
+  padding-bottom: 20px;
+}
+
+.inputContainer {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.updateInput {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+.postButton {
+  background-color: #43a047;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.postButton:hover {
+  background-color: #357f39;
+}
+
+.updateCard {
+  background-color: white;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 3%;
+}
+
+.updateImage {
+  max-width: 300px; /* Smaller image size */
+  border-radius: 5px;
+  margin-right: 10px; /* Space between image and content */
+}
+
+.updateContent {
+  flex: 1;
+}
+
+.updateText {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.updateUser {
+  font-size: 12px;
+  color: #888;
+  margin-bottom: 5px;
+}
+
+.updateTime {
+  font-size: 12px;
+  color: #888;
+  margin-bottom: 5px;
+}
+
+.deleteButton {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.deleteButton:hover {
+  background-color: #c82333;
+}
