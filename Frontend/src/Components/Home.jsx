@@ -151,7 +151,58 @@ const DIV = styled.section`
     width: 100%;
   }
 
-  @media screen and (min-device-width: 310px) and (max-device-width: 480px) {
+  @media screen and (max-width: 480px) {
+    .catMainSec,
+    .abtMSec,
+    .arrangeSec {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .newCollection {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+    .abtImg img {
+      width: 100%;
+    }
+    .giftdesc {
+      display: none;
+    }
+    .newCollection div {
+      width: 100%;
+    }
+    .collectSection {
+      padding: 70px 0;
+    }
+
+    .newHead-Capt {
+      font-family: "Pathway Gothic One", sans-serif;
+      font-size: 23px;
+      font-weight: 600;
+      color: #0a0a0a;
+      margin: 0;
+    }
+
+    .abtText {
+      padding-top: 30px;
+      width: 100%;
+    }
+    .abtp {
+      font-size: 14px;
+    }
+    .abtImg {
+      width: 100%;
+    }
+    .arrimg {
+      width: 100%;
+    }
+    .catImg {
+      width: 100%;
+    }
+  }
+  @media screen (min-width: 480px)and (max-width: 930px) {
     .catMainSec,
     .abtMSec,
     .arrangeSec {

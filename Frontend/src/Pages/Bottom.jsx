@@ -1,13 +1,13 @@
 import React from "react";
-import "../styles/bottom.css";
+import styles from "../styles/bottom.module.css";
 import { Link } from "react-router-dom";
 import flower from "../Images/footer-flower-cta@2x.png";
 
 const Bottom = () => {
   return (
     <div>
-      <div className="bottom">
-        <div className="btm">
+      <div className={styles.bottom}>
+        <div className={styles.btm}>
           <h1>Ready to get started? Join thousands of others today.</h1>
           <Link to={"/signup"}>
             <button>Start a DonateforChange</button>
@@ -16,7 +16,7 @@ const Bottom = () => {
             <button>How it Works</button>
           </Link>
         </div>
-        <div className="img">
+        <div className={styles.img}>
           <img src={flower} alt="" />
         </div>
       </div>

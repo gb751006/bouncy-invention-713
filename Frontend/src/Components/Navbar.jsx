@@ -18,7 +18,6 @@ const Navbar = () => {
   };
   window.addEventListener("scroll", changeNavbarColor);
   return (
-    
     <DIV>
       {/* //  */}
       <nav className={colorChange ? "navbar colorChange" : "navbar"}>
@@ -84,25 +83,24 @@ const Navbar = () => {
 export default Navbar;
 
 const DIV = styled.section`
-  
-   li > img { 
-    margin-right:0px;
+  li > img {
+    margin-right: 0px;
     /* border:1px solid yellow; */
     width: 40%;
     /* margin:auto; */
-  } 
-  .mega-links{
-    display:flex;
+  }
+  .mega-links {
+    display: flex;
     /* border:1px solid red; */
   }
   .mobile-logo {
     width: 60%;
   }
-  .menu-items{
+  .menu-items {
     /* border:1px solid blue; */
     /* display:flex */
-    align-items:center;
-    justify-content:space-evenly;
+    align-items: center;
+    justify-content: space-evenly;
   }
   .navbar {
     /* display: flex; */
@@ -112,7 +110,7 @@ const DIV = styled.section`
     width: 100%;
     /* border:1px solid red; */
     position: fixed;
-    z-index:9999;
+    z-index: 9999;
   }
   .colorChange {
     background-color: #fff;

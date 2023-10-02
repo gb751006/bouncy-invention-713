@@ -1,44 +1,28 @@
 import React from "react";
-import { Box, Heading } from "@chakra-ui/react";
-import { ArrowForwardIcon, ArrowBackIcon } from "@chakra-ui/icons";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import styles from "../styles/details.module.css";
 
 const Details = () => {
-  const NextArrow = ({ className, onClick }) => {
-    return (
-      <div
-        className={className}
-        onClick={onClick}
-        style={{
-          backgroundColor: "white",
-        }}
-      >
-        <ArrowForwardIcon boxSize={6} color="green" />
-      </div>
-    );
-  };
-
-  const PrevArrow = ({ className, onClick }) => {
-    return (
-      <div
-        className={className}
-        onClick={onClick}
-        style={{ backgroundColor: "white" }}
-      >
-        <ArrowBackIcon boxSize={6} color="green" />
-      </div>
-    );
-  };
   const settings = {
     speed: 1000,
     autoplaySpeed: 2000,
-    slidesToShow: 4,
-    swipeToSlide: true,
+    slidesToShow: 1,
     slidesToScroll: 1,
-    nextArrow: <NextArrow />,
-    prevArrow: <PrevArrow />,
+    dots: true,
+    arrows: false,
+    responsive: [
+      {
+        breakpoint: 930,
+        settings: {
+          // slidesToShow: 4,
+          slidesToScroll: 1,
+          dots: false,
+          arrows: true,
+        },
+      },
+    ],
   };
 
   let data = [
@@ -87,36 +71,24 @@ const Details = () => {
   ];
 
   return (
-    <Box
-      className="product"
-      ml={{ base: "0", sm: "150px" }}
-      width={{ base: "100%", sm: "80%" }}
-      style={{
-        background: "rgb(98,207,120)",
-        background:
-          "radial-gradient(circle, rgba(98,207,120,1) 0%, rgba(70,252,124,0) 100%)",
-      }}
-    >
+    <div className={styles.productcontainer}>
       <p>Happening near you</p>
       <h1>Change in Community..</h1>
 
       <Slider {...settings}>
         {data.map((item, i) => (
-          <Box key={i} padding={{ base: "10px", sm: "20px" }}>
+          <div key={i} className={styles.card}>
             <img src={item.src} alt={item.title} />
-            <Heading as="h4" size="sm" p="4px">
-              {item.title}
-            </Heading>
-            <Heading as="h5" size="sm" p="5px" color="blackAlpha.600">
-              {item.desc}
-            </Heading>
-            <Heading as="h6" size="sm" p="4px">
+
+            <h4>{item.title}</h4>
+            <p className={styles.description}>{item.desc}</p>
+            <p>
               {item.price}-{item.donation}
-            </Heading>
-          </Box>
+            </p>
+          </div>
         ))}
       </Slider>
-    </Box>
+    </div>
   );
 };
 

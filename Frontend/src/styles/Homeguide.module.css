@@ -38,7 +38,6 @@
   width: 33%;
 }
 
-
 .num {
   text-align: center;
 
@@ -75,7 +74,6 @@
 }
 
 .steps > div {
-  
   padding: 10px;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
@@ -89,6 +87,32 @@ p {
 @media screen and (max-width: 480px) {
   .guideMain {
     width: 100%;
+  }
+.num>div{
+  text-align: center;
+}
+  .steps {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .steps > div {
+    width: auto;
+    flex: 0 0 100%;
+  }
+
+  .num {
+    width: 30px;
+    height: 30px;
+    font-size: medium;
+  }
+}
+@media screen and (min-width: 480px) and (max-width: 930px) {
+  .guideMain {
+    width: 100%;
+  }
+  .num>div{
+    text-align: center;
   }
 
   .steps {
