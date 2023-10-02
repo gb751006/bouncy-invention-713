@@ -62,10 +62,10 @@ const Navbar = () => {
                 <img src={logo} />
               </li>
               <li>
-                <Link>Login</Link>
+                <Link to={"/login"}>Login</Link>
               </li>
               <li>
-                <Link>Sign Up</Link>
+                <Link to={"/register"}>Sign Up</Link>
               </li>
 
               {/* <Box className="Login">

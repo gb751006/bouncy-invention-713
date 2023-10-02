@@ -1,5 +1,5 @@
 
-
+import { Navigate, useNavigate } from 'react-router-dom'
 import { useState } from 'react'
 import {
   Container,
@@ -28,6 +28,7 @@ import {
 } from '@chakra-ui/react'
 
 import { useToast } from '@chakra-ui/react'
+import Navbar from './Navbar'
 const Form1 = ({handleState}) => {
   return (
     <>
@@ -185,12 +186,7 @@ const Form1 = ({handleState}) => {
         <Button m="5px" 
         onClick={(e)=>{handleState("Type","Family")}}
         >Family</Button>
-        <Button m="5px" 
-        onClick={(e)=>{handleState("Type","Events")}}
-        >Events</Button>
-        <Button m="5px" 
-        onClick={(e)=>{handleState("Type","Faith")}}
-        >Faith</Button>
+       
         <Button m="5px" 
         onClick={(e)=>{handleState("Type","Other")}}
         >Other</Button>
@@ -269,7 +265,7 @@ const Form3 = ({handleState}) => {
   )
 }
 
-const Form4 = () => {
+const Form4 = ({handleState}) => {
   return (
     <Box position={'relative'}>
       <Container
@@ -307,7 +303,8 @@ const Form4 = () => {
 <input type="file" name="poster" accept="image/png, image/jpeg"  />
             <Stack mt={"30px"} spacing={4}>
               <Input
-                placeholder="Youtube Link"
+              onChange={(e)=>{handleState("image",e.target.value)}}
+                placeholder="Image Link"
                 bg={'gray.100'}
                 border={0}
                 color={'gray.500'}
@@ -331,6 +328,7 @@ const Form4 = () => {
 
 
 export default function Multistep() {
+  const navigate=useNavigate()
   const toast = useToast()
   const [step, setStep] = useState(1)
   const [progress, setProgress] = useState(25)
@@ -345,18 +343,48 @@ export default function Multistep() {
       };
     }); 
   }
-  console.log(data)
+  const handlesumbit=()=>{
+    fetch("http://localhost:8080/posts/add",{
+      method:"POST",
+      headers: {
+          "Content-Type": "application/json",
+        },
+        body:JSON.stringify(data)
+  })
+  .then(res=>res.json())
+  .then(res=>
+    toast({
+      title: 'Donation account created',
+      description: "Donation account created",
+      status: 'success',
+      duration: 3000,
+      isClosable: true,
+      position:"top"
+    }),
+  setTimeout(() => {
+    navigate("/")
+  }, 3000)
+    )
+  .catch(err=>console.log(err))
+ 
+
+  }
   return (
     <>
+    <Navbar  />
       <Box
+     
         borderWidth="1px"
         rounded="lg"
         shadow="1px 1px 3px rgba(0,0,0,0.3)"
         maxWidth={800}
         p={6}
+        pt={20}
         m="10px auto"
+        mt="0px"
+        
         as="form">
-        <Progress hasStripe value={progress} mb="5%" mx="5%" isAnimated></Progress>
+        <Progress hasStripe value={progress} mb="5%" mx="5%"  isAnimated></Progress>
         {step === 1 ? <Form1 handleState={handleState} /> : step === 2 ? <Form2 handleState={handleState} />: step === 3 ? <Form3 handleState={handleState} />:  <Form4 handleState={handleState} />  }
         <ButtonGroup mt="5%" w="100%">
           <Flex w="100%" justifyContent="space-between">
@@ -395,13 +423,7 @@ export default function Multistep() {
                 colorScheme="red"
                 variant="solid"
                 onClick={() => {
-                  toast({
-                    title: 'Account created.',
-                    description: "We've created your account for you.",
-                    status: 'success',
-                    duration: 3000,
-                    isClosable: true,
-                  })
+                handlesumbit()
                 }}>
                 Submit
               </Button>

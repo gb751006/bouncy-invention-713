@@ -7,6 +7,9 @@ import Donations from '../Pages/Donations';
 import Transfers from '../Pages/Transfers';
 import Updates from '../Pages/Updates';
 import FundPage from '../Pages/FundPage';
+import SignupPage from '../Pages/SignUp';
+import LoginPage from '../Pages/Login';
+import Multistep from '../Components/multipage';
 
 const AllRoutes = () => {
     const appRoute=createBrowserRouter([
@@ -39,6 +42,18 @@ const AllRoutes = () => {
         {
           path: "/fundpage/:id",
           element:<FundPage />,
+        },
+        {
+          path: "/register",
+          element:<SignupPage />,
+        },
+        {
+          path: "/login",
+          element:<LoginPage />,
+        },
+        {
+          path: "/donationform",
+          element:<Multistep />,
         },
       ]);
       return (

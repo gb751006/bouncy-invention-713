@@ -17,7 +17,7 @@ const Home = () => {
         <div className="content">
           <h1>Donate For Change.</h1>
           <p>Your Little Help can do Miracle</p>
-          <a href="#Home">👉Start Now </a>
+          <a href="/donationform" >👉Start Now </a>
         </div>
       </section>
       <div className="banner">
