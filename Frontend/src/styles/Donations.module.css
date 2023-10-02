@@ -1,95 +1,88 @@
-.fund{
-    margin-top: 100px;
-    background-color: #f2f2f2;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 1100px;
-    margin-left: 110px;
+/* Container */
+.fund {
+  margin-top: 100px;
+  background-color: #f7f7f7;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 1200px;
+  /* text-align: center; */
+  margin-left: 230px;
 }
-.title{
+
+.title {
   color: #43a047;
-  font-size: 80px;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  text-align: left;
+  font-weight: bolder;
 }
 
-  .funds{
-    width: 50%;
-  }
-  
-  .fund-card img {
-    width: 90%;
-    height: auto;
-    border-radius: 8px;
-    margin-right: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  }
-  
-  .fund-card .content {
-    flex: 1;
-  }
-  
-  .fund-card h3 {
-    font-size: 24px;
-    margin: 0;
-    margin-bottom: 10px;
-    color: #333;
-  }
-  
-  .fund-card .info {
-    font-size: 16px;
-    margin-bottom: 8px;
-    color: #666;
-  }
-  
-  .fund-card .btn {
-    background-color: #43a047;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 4px;
-    cursor: pointer;
-    /* transition: background-color 0.2s ease-in-out; */
-    font-size: 18px;
-    margin-left: 10px;
-  }
-  
-  .btn:hover {
-    background-color: #357f39;
-  }
+/* Fund Card */
+.fund-card {
+  display: flex;
+  background-color: #fff;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  border-radius: 2000px 0px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  gap: 20px;
+  padding: 20px;
+  transition: transform 0.2s ease-in-out;
+  cursor: pointer;
+}
 
+.fund-card:hover {
+  transform: translateY(-5px);
+}
 
-  .fund-card {
-    display: flex;
-    align-items: center;
-    background-color: #fff;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    margin-bottom: 20px;
-    margin-top: 20px;
-    padding: 20px;
-    width: 1000px;
-    gap: 20px;
-    /* transition: transform 0.2s ease-in-out;
-    animation: shake 0.5s ease-in-out; */
-  }
-  
-  @keyframes shake {
-    0% {
-      transform: translateX(0);
-    }
-    20% {
-      transform: translateX(-5px);
-    }
-    40% {
-      transform: translateX(5px);
-    }
-    60% {
-      transform: translateX(-5px);
-    }
-    80% {
-      transform: translateX(5px);
-    }
-    100% {
-      transform: translateX(0);
-    }
-  }
+.fund-card img {
+  width: 1200px;
+  max-width: 300px;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease-in-out;
+}
+
+.fund-card:hover img {
+  transform: scale(1.1);
+}
+
+.content {
+  flex: 1;
+}
+
+h3 {
+  font-size: 1.8rem;
+  margin: 0;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.info {
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+  color: #666;
+}
+
+.btn {
+  background-color: #43a047;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  margin-left: 120px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.btn:hover {
+  background-color: #357f39;
+}
+
+.funds{
+  padding: 20px;
+}
