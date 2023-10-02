@@ -23,7 +23,7 @@ const Donations = () => {
             </div>
             <div className={donationStyle['funds']}>
             <h3>{fund.username}</h3>
-            <p className={donationStyle["info"]}>Info: {fund.Type}</p>
+            <p className={donationStyle["info"]}>Fund for: {fund.Type}</p>
             <p className={donationStyle["info"]}>Fund goal: {fund.amount}</p>
             <p className={donationStyle["info"]}>Fund Type: {fund.fundType}</p>
             <p className={donationStyle["info"]}>Country: {fund.country}</p>
