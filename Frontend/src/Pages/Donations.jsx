@@ -19,7 +19,7 @@ const Donations = () => {
         {funds.map((fund) => (
           <div key={fund._id} className={donationStyle['fund-card']}>
             <div className={donationStyle['funds']}>
-            {fund.image && <img src={"https://lssparle.org.in/wp-content/uploads/2021/10/hub_12_18_charity-Hero-1200x900-1.jpg"} alt="Fund" />}
+            {fund.image && <img src={fund.image} alt="Fund" />}
             </div>
             <div className={donationStyle['funds']}>
             <h3>{fund.username}</h3>
