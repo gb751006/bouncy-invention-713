@@ -4,7 +4,7 @@
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 90%;
+    width: 1100px;
     margin-left: 110px;
 }
 .title{
@@ -17,7 +17,7 @@
   }
   
   .fund-card img {
-    max-width: 80%;
+    max-width: 1000px;
     height: auto;
     border-radius: 8px;
     margin-right: 20px;
@@ -67,7 +67,7 @@
     margin-bottom: 20px;
     margin-top: 20px;
     padding: 20px;
-    width: 90%;
+    width: 1000px;
     /* transition: transform 0.2s ease-in-out;
     animation: shake 0.5s ease-in-out; */
   }
