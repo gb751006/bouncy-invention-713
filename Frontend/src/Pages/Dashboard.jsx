@@ -36,8 +36,13 @@ const handleedit=(id)=>{
       body:JSON.stringify({amount:editfund})
 })
 .then(res=>res.json())
-
+.then(()=>{
+  setTimeout(() => {
+    setEditFund(0)
+  }, 2000);
+})
 .catch(err=>console.log(err))
+
 }
   useEffect(() => {
     fetch('http://localhost:8080/funds/private',{
@@ -50,7 +55,7 @@ const handleedit=(id)=>{
       .then((response) => response.json())
       .then((data) => setFunds(data))
       .catch((error) => console.error('Error fetching funds:', error));
-  }, []);
+  }, [editfund]);
 
   return (
    <div style={{marginTop:"100px"}}>
