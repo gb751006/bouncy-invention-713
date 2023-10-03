@@ -1,5 +1,6 @@
 import { ViewIcon, ViewOffIcon } from '@chakra-ui/icons'
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
 import {
   Button,
@@ -15,6 +16,7 @@ import {
   InputGroup,
   InputRightElement,
 } from '@chakra-ui/react'
+import Navbar from '../Components/Navbar'
 
 
 export default function LoginPage() {
@@ -41,9 +43,18 @@ const payload={email,password}
     .catch(err=>console.log(err))
     }
   return (
-    <Stack minH={'100vh'} direction={{ base: 'column', md: 'row' }}>
-      <Flex p={8} flex={1} align={'center'} justify={'center'}>
-        <Stack spacing={4} w={'full'} maxW={'md'}>
+    <Stack 
+    
+    minH={'100vh'} direction={{ base: 'column', md: 'row' }}>
+      <Navbar/>
+      <Flex
+           mt={"30px"}
+           
+      p={8} flex={1} align={'center'} justify={'center'}>
+        <Stack 
+        p={10}
+        boxShadow={"rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px"}
+        spacing={4} w={'full'} maxW={'md'}>
           <Heading fontSize={'2xl'}>Sign in to your account</Heading>
           
           <FormControl id="email">
@@ -70,10 +81,22 @@ const payload={email,password}
             </FormControl>
           <Stack spacing={6}>
           
-            <Button onClick={()=>handleSubmit()} colorScheme={'blue'} variant={'solid'}>
+            <Button bgColor={"#43A047"} onClick={()=>handleSubmit()} colorScheme={'blue'} variant={'solid'}>
               Sign in
             </Button>
           </Stack>
+          <FormLabel>Don't have an account?</FormLabel>
+          <Button
+              rounded={'full'}
+              w={"80px"}
+              bgColor={"#43A047"}
+              color={'white'}
+              _hover={{
+                bg: 'blue.500',
+              }}>
+                
+                <Link style={{textDecoration:"none"}} to="/register">Signup</Link>
+            </Button>
         </Stack>
       </Flex>
       <Flex flex={1}>
