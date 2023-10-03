@@ -18,7 +18,18 @@ const Home = () => {
         <div className="content">
           <h1>Donate For Change.</h1>
           <p>Your Little Help can do Miracle</p>
-          <a href="/donationform" >👉Start Now </a>
+          <a
+            href="/donationform"
+            style={{
+              a: " box-shadow: inset 0 0 0 0 #54d699",
+              color: " #299e98",
+              margin: "0 -0.25rem",
+              padding: "0 0.25rem",
+              transition: "color 0.3s ease-in-out, box-shadow 0.3s ease-in-out",
+            }}
+          >
+            👉Start Now{" "}
+          </a>
         </div>
       </section>
       <div className="banner">
@@ -31,9 +42,6 @@ const Home = () => {
       <Details />
       <Bottom />
       {/********************* * section-end ***************/}
-
-      {/* <Footer /> */}
-      {/* <Footer /> */}
     </DIV>
   );
 };
@@ -203,7 +211,7 @@ const DIV = styled.section`
       width: 100%;
     }
   }
-  @media screen and (min-width: 480px)and (max-width: 930px) {
+  @media screen and (min-width: 480px) and (max-width: 930px) {
     .catMainSec,
     .abtMSec,
     .arrangeSec {
