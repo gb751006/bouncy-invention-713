@@ -59,12 +59,13 @@ const handleedit=(id)=>{
 
   return (
    <div style={{marginTop:"100px"}}>
-     {funds?.map((fund)=>(
+    <>
+    {funds?.map((fund)=>(
       <Center  ml={"30%"} py={6}>
       <Stack
         borderWidth="1px"
         borderRadius="lg"
-        w={{ sm: '100%', md: '640px' }}
+        w={{ sm: '100%', md: '1000px' }}
         height={{ sm: '476px', md: '20rem' }}
         direction={{ base: 'column', md: 'row' }}
         
@@ -195,6 +196,7 @@ const handleedit=(id)=>{
      )
       
      )}
+    </>
    
    </div>
   )

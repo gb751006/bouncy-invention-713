@@ -22,11 +22,11 @@
   margin: 0 -0.25rem;
   padding: 0 0.25rem;
   transition: color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-}
+} */
 a:hover {
   box-shadow: inset 300px 0 0 0 #277f37;
   color: white;
-} */
+} 
 .content {
   /* border:1px solid red; */
   display: flex;
