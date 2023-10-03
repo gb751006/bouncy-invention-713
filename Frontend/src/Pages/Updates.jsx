@@ -12,7 +12,7 @@ const Updates = () => {
   }, []);
 
   const dataFetching = () => {
-    fetch("http://localhost:8080/posts", {
+    fetch("https://donateforchangeapi.onrender.com/posts/",{
       method: "GET",
       headers: {
         "Content-Type": "application/json",

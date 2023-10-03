@@ -13,7 +13,7 @@ const FundPage = () => {
   const [showDonationForm, setShowDonationForm] = useState(false);
 
   useEffect(() => {
-    fetch(`http://localhost:8080/funds/${id}`)
+    fetch(`https://donateforchangeapi.onrender.com/funds/${id}`)
       .then((response) => response.json())
       .then((data) => setFundDetails(data))
       .catch((error) => console.error('Error fetching fund details:', error));

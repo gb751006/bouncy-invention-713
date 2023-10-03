@@ -7,7 +7,7 @@ const Donations = () => {
   const [funds, setFunds] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:8080/funds')
+    fetch('https://donateforchangeapi.onrender.com/funds')
       .then((response) => response.json())
       .then((data) => setFunds(data))
       .catch((error) => console.error('Error fetching funds:', error));
