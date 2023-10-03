@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import Navbar from "../Components/Navbar";
+import Navbar from "../Components/NavBar2";
 import banner from "../Images/18733161_Business team climbing giant handshake with support of leader.jpg";
 import Footer from "./Footer";
 import logo from "../Images/DonateForChange_logo-removebg-preview.png";
