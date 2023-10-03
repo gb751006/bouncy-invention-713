@@ -55,5 +55,5 @@ npm install
 npm run server
 
 ## Deployment link
-[Netlify Link](https://donateforchanges.netlify.app/)
+https://donateforchanges.netlify.app/
 ```
