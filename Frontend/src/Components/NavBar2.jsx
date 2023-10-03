@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { FaUserCircle } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import logo from "../Images/DonateForChange_logo-removebg-preview.png";
+import logo from "../Images/modlogo.png";
 import LogoutButton from "../Components/LogOut"
 import {
   Box,
@@ -37,11 +37,11 @@ console.log(name)
   const[isToken,settoken]=useState(localStorage.getItem('token')||"")
 
   const handleLogout = () => {
-    
-    
-    localStorage.removeItem('token'); 
+
+
+    localStorage.removeItem('token');
   settoken("")
-   
+
   };
 useEffect(()=>{
 
@@ -59,11 +59,11 @@ useEffect(()=>{
   setTimeout(() => {
     settoken(localStorage.getItem('token')||"")
   }, 2000);
-  
+
 },[isToken])
 
   useEffect(() => {
-    
+
     const handleScroll = () => {
       if (window.scrollY > 0) {
         setIsSticky(true);
@@ -83,18 +83,19 @@ useEffect(()=>{
   };
 
   return (
-    <Box 
-      bg="pink.100"
-      py={3}
-      px={4}
-      w={isSticky ? "100%" : "80%"}
-      marginTop={isSticky ? 0 : "5"}
-      position={isSticky ? "sticky" : "static"}
-      top={0}
-      zIndex={1000}
-      marginLeft="auto"
-      marginRight="auto"
-      borderRadius={isSticky ? 0 : "50"}
+    <Box
+    bg={isSticky ? "#eef3ead8" : "#dee3da54"}
+    py={3}
+    px={4}
+    w={isSticky ? "100%" : "83%"}
+    paddingLeft={isSticky ? "15%" : 0}
+    marginTop={isSticky ? 0 : "3%"}
+    position={isSticky ? "sticky" : "fixed"}
+    top={0}
+    zIndex={9999}
+    marginLeft={isSticky ? 0 : "13%"}
+    height="11vh"
+    borderRadius={isSticky ? 0 : "50"}
     >
       <Center>
         <Flex justify="space-between" align="center">
@@ -123,7 +124,7 @@ useEffect(()=>{
           <Box>
             {/* Your logo goes here */}
             <Center>
-              <img src={logo} alt="Logo" width="10%" />
+              <img src={logo} alt="Logo" width="40%" />
             </Center>
           </Box>
           <Flex align="center">
@@ -134,7 +135,7 @@ useEffect(()=>{
             {isToken?( <LogoutButton  handleLogout={handleLogout}/>):<Button ml={3} variant="outline" colorScheme="teal"  display={{ base: "none", md: "block" }}  >
               <Link to={"/login"}>SignIn</Link>
               </Button>}
-              
+
             <Button
               ml={3}
               colorScheme="teal"
@@ -151,9 +152,9 @@ useEffect(()=>{
         <DrawerContent>
           <DrawerCloseButton />
 
-          <DrawerBody>
+          <DrawerBody  bg="green.500">
             <Menu>
-              <List>
+              <List marginTop="50%">
                 <MenuItem onClick={toggleDrawer}>Search</MenuItem>
                 <MenuItem onClick={toggleDrawer}>For Charities</MenuItem>
                 <MenuItem onClick={toggleDrawer}>How it works</MenuItem>
@@ -168,4 +169,4 @@ useEffect(()=>{
   );
 }
 
-export default Navbarrr;
+export default Navbarrr;
