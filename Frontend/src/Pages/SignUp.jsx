@@ -20,6 +20,8 @@ import {
   Radio,
 } from "@chakra-ui/react";
 import { FaEye, FaEyeSlash } from "react-icons/fa"; // Import eye icons
+import logo from "../Images/modlogo.png"
+import { Link } from "react-router-dom";
 
 const SignupPage = () => {
   const navigate = useNavigate();
@@ -155,7 +157,7 @@ const SignupPage = () => {
         p={{ base: 8, md: 16 }}
       >
         <VStack spacing={10} alignItems="center">
-          <Image src="/DonateForChange.png" alt="Logo" maxW="150px" />
+          <Image src={logo} alt="Logo" maxW="150px" />
           <Heading as="p" size="sm" marginTop={5}>
             Welcome to DonateForChange!
           </Heading>
@@ -187,7 +189,7 @@ const SignupPage = () => {
             // Handle the Sign In link click action here
           }}
         >
-          Already Have an Account? Sign In
+          <Link to={"/login"}>Already Have an Account? Sign In</Link>
         </Text>
 
         <Box width="100%" maxW="400px">
@@ -266,12 +268,13 @@ const SignupPage = () => {
                 p="4"
                 borderRadius="md"
                 w="300px" // Set the box width and height to make it square
-                h="150px"
+                h="180px"
+                
               >
                 <Text fontSize="md" color="gray.500" textAlign="left">
                   Your password must have:
                 </Text>
-                <UnorderedList listStyleType="disc">
+                <UnorderedList listStyleType="disc" >
                   <ListItem fontSize="sm" color="gray.500" textAlign="left">
                     At least 8 characters
                   </ListItem>

@@ -118,13 +118,13 @@ useEffect(()=>{
               variant="outline"
               display={{ base: "none", md: "block" }}
             >
-              For Charities
+             <Link to={"/sidebar/donations"}> For Donations</Link>
             </Button>
           </Flex>
           <Box>
             {/* Your logo goes here */}
             <Center>
-              <img src={logo} alt="Logo" width="40%" />
+              <Link to={"/"}><img src={logo} alt="Logo" width="40%" style={{border:"1px solid red"}} /></Link>
             </Center>
           </Box>
           <Flex align="center">
@@ -141,7 +141,8 @@ useEffect(()=>{
               colorScheme="teal"
               display={{ base: "none", md: "block" }}
             >
-              Start a GoFund
+              
+              <Link to={"/donationform"}> Start a GoFund</Link>
             </Button>
           </Flex>
         </Flex>

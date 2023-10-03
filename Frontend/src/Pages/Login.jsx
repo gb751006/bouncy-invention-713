@@ -19,6 +19,7 @@ import {
   useToast,
 } from '@chakra-ui/react'
 import Navbar from '../Components/Navbar'
+import Navbarrr from '../Components/NavBar2'
 
 
 export default function LoginPage() {
@@ -85,7 +86,7 @@ const payload={email,password}
     <Stack 
     
     minH={'100vh'} direction={{ base: 'column', md: 'row' }}>
-      <Navbar/>
+      <Navbarrr/>
       <Flex
            mt={"30px"}
            

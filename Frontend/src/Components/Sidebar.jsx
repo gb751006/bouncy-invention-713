@@ -10,6 +10,7 @@ import {
 import sidebarStyle from "../styles/Sidebar.module.css";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
+import Navbarrr from "./NavBar2";
 
 const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(true);
@@ -38,7 +39,7 @@ const Sidebar = () => {
   ];
   return (
     <>
-    <Navbar/>
+    <Navbarrr/>
     <div className={sidebarStyle.container22}>
       <div
         style={{ width: isOpen ? "200px" : "40px" }}

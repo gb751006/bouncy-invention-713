@@ -28,6 +28,7 @@ import {
 
 import { useToast } from '@chakra-ui/react'
 import Navbar from './Navbar'
+import Navbarrr from './NavBar2'
 const Form1 = ({handleState}) => {
   const[type,setType]=useState("")
   
@@ -327,7 +328,7 @@ export default function Multistep() {
   }
   return (
     <>
-    <Navbar  />
+    <Navbarrr  />
       <Box
      
         borderWidth="1px"

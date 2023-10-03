@@ -5,6 +5,7 @@ import { FaUserCircle } from 'react-icons/fa';
 import fundStyle from "../styles/FundPage.module.css"
 import doner from "../Images/doner.png"
 import DonationForm from './DonationForm';
+import Navbarrr from '../Components/NavBar2';
 
 const FundPage = () => {
   const { id } = useParams();
@@ -28,7 +29,7 @@ const FundPage = () => {
 
   return (
     <>
-      <Navbar />
+      <Navbarrr />
         <div className={fundStyle["container4"]}>
           <div className={fundStyle["block1"]}>
           <p className={fundStyle["heading"]}>{fundDetails.Type}</p>
