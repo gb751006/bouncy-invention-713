@@ -1,4 +1,3 @@
-
 import { Navigate, useNavigate } from 'react-router-dom'
 import { useState } from 'react'
 import {
@@ -30,6 +29,8 @@ import {
 import { useToast } from '@chakra-ui/react'
 import Navbar from './Navbar'
 const Form1 = ({handleState}) => {
+  const[type,setType]=useState("")
+  
   return (
     <>
       <Heading w="100%" textAlign={'center'} fontWeight="normal" mb="2%">
@@ -65,55 +66,8 @@ const Form1 = ({handleState}) => {
         </Select>
       </FormControl>
 
-      <FormControl as={GridItem} colSpan={6}>
-        {/* <FormLabel
-          htmlFor="street_address"
-          fontSize="sm"
-          fontWeight="md"
-          color="gray.700"
-          _dark={{
-            color: 'gray.50',
-          }}
-          mt="2%">
-          Street address
-        </FormLabel> */}
-        {/* <Input
-          type="text"
-          name="street_address"
-          id="street_address"
-          autoComplete="street-address"
-          focusBorderColor="brand.400"
-          shadow="sm"
-          size="sm"
-          w="full"
-          rounded="md"
-        /> */}
-      </FormControl>
+     
 
-      {/* <FormControl as={GridItem} colSpan={[6, 6, null, 2]}>
-        <FormLabel
-          htmlFor="city"
-          fontSize="sm"
-          fontWeight="md"
-          color="gray.700"
-          _dark={{
-            color: 'gray.50',
-          }}
-          mt="2%">
-          City
-        </FormLabel>
-        <Input
-          type="text"
-          name="city"
-          id="city"
-          autoComplete="city"
-          focusBorderColor="brand.400"
-          shadow="sm"
-          size="sm"
-          w="full"
-          rounded="md"
-        />
-      </FormControl> */}
 
       <FormControl as={GridItem} colSpan={[6, 3, null, 2]}>
         <FormLabel
@@ -168,27 +122,27 @@ const Form1 = ({handleState}) => {
         />
         
         <Text>Why You Are Fundraising</Text>
-        <Button m="5px" 
-        onClick={(e)=>{handleState("Type","Animal")}}
+        <Button m="5px" bg={type=="Animal"?"#4FFFB0":"#D0F0C0"}
+        onClick={(e)=>{handleState("Type","Animal");setType("Animal")}}
         >Animal</Button>
-        <Button m="5px" 
-        onClick={(e)=>{handleState("Type","Buisness")}}
+        <Button m="5px" bg={type=="Buisness"?"#4FFFB0":"#D0F0C0"}
+        onClick={(e)=>{handleState("Type","Buisness");setType("Buisness")}}
         >Buisness</Button>
-        <Button m="5px" 
-        onClick={(e)=>{handleState("Type","Community")}}
+        <Button m="5px" bg={type=="Community"?"#4FFFB0":"#D0F0C0"}
+        onClick={(e)=>{handleState("Type","Community");setType("Community")}}
         >Commuinty</Button>
-        <Button m="5px" 
-        onClick={(e)=>{handleState("Type","Creative")}}
+        <Button m="5px" bg={type=="Creative"?"#4FFFB0":"#D0F0C0"}
+        onClick={(e)=>{handleState("Type","Creative");setType("Creative")}}
         >Creative</Button>
-        <Button m="5px" 
-        onClick={(e)=>{handleState("Type","Education")}}
+        <Button m="5px" bg={type=="Education"?"#4FFFB0":"#D0F0C0"}
+        onClick={(e)=>{handleState("Type","Education");setType("Education")}}
         >Education</Button>
-        <Button m="5px" 
-        onClick={(e)=>{handleState("Type","Family")}}
+        <Button m="5px" bg={type=="Family"?"#4FFFB0":"#D0F0C0"}
+        onClick={(e)=>{handleState("Type","Family");setType("Family")}}
         >Family</Button>
        
-        <Button m="5px" 
-        onClick={(e)=>{handleState("Type","Other")}}
+        <Button m="5px" bg={type=="Other"?"#4FFFB0":"#D0F0C0"}
+        onClick={(e)=>{handleState("Type","Other");setType("Other")}}
         >Other</Button>
         
         
@@ -197,6 +151,7 @@ const Form1 = ({handleState}) => {
   )
 }
 const Form2 = ({handleState}) => {
+  const[type,setType]=useState("")
   return (
     <>
       <Heading w="100%" textAlign={'center'} fontWeight="normal">
@@ -207,20 +162,20 @@ const Form2 = ({handleState}) => {
         
         
      
-        <Button m="5px" h={"100px"} 
-        onClick={(e)=>{handleState("fundType","yourself")}}
+        <Button m="5px" h={"100px"} bg={type=="youself"?"#4FFFB0":"#D0F0C0"}
+        onClick={(e)=>{handleState("fundType","yourself");setType("youself")}}
         > 
       <Text fontSize='xl'  mr={"38%"}>Yourself </Text>
   <Image w={"30%"} h={"100%"} src='https://www.gofundme.com/_next/static/images/yourself-f0b50d399c2485c1698f82eba958108f.png' alt='Dan Abramov' />
         </Button>
-        <Button m="5px" h={"100px"} 
-        onClick={(e)=>{handleState("fundType","others")}}
+        <Button m="5px" h={"100px"} bg={type=="others"?"#4FFFB0":"#D0F0C0"}
+        onClick={(e)=>{handleState("fundType","others");setType("others")}}
         > 
       <Text fontSize='xl'  mr={"38%"}>Someone else </Text>
   <Image w={"30%"} h={"100%"} src='https://www.gofundme.com/_next/static/images/someone-else-5a430cd6767be30776f9dfd1b46be9ca.png' alt='Dan Abramov' />
         </Button>
-        <Button m="5px" h={"100px"} 
-        onClick={(e)=>{handleState("fundType","charity")}}
+        <Button m="5px" h={"100px"} bg={type=="charity"?"#4FFFB0":"#D0F0C0"}
+        onClick={(e)=>{handleState("fundType","charity");setType("charity")}}
         > 
       <Text fontSize='xl'  mr={"38%"}>Charity </Text>
   <Image w={"30%"} h={"100%"} src='https://www.gofundme.com/_next/static/images/charity-9cb36cf97a1c6187e47608a680f09e05.png' alt='Dan Abramov' />
@@ -333,7 +288,7 @@ export default function Multistep() {
   const [step, setStep] = useState(1)
   const [progress, setProgress] = useState(25)
   const [data,setData]=useState({})
-  
+  // 123asdzxc@A
   const handleState=(name,value)=>{
    
     setData((prevState) => {
@@ -395,6 +350,7 @@ export default function Multistep() {
                   setStep(step - 1)
                   setProgress(progress - 25)
                 }}
+                bgColor={"#43A047"}
                 isDisabled={step === 1}
                 colorScheme="teal"
                 variant="solid"
@@ -403,6 +359,7 @@ export default function Multistep() {
                 Back
               </Button>
               <Button
+              bgColor={"#43A047"}
                 w="7rem"
                 isDisabled={step === 4}
                 onClick={() => {
