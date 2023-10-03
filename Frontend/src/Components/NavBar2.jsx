@@ -29,7 +29,7 @@ function Navbarrr() {
   const [isSticky, setIsSticky] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [name, setName] = useState("");
-  console.log(name);
+  // console.log(name);
   const toggleDrawer = () => {
     setIsDrawerOpen(!isDrawerOpen);
   };
@@ -43,16 +43,15 @@ function Navbarrr() {
 
 useEffect(()=>{
 
-  fetch(' https://donateforchangeapi.onrender.com/users/',{
+  fetch('https://donateforchangeapi.onrender.com/users/user/',{
     method:"GET",
     headers: {
-
         "Content-Type": "application/json",
         Authorization: `Bearer ${localStorage.getItem("token")}`,
       },
     })
       .then((response) => response.json())
-      .then((data) => setName(data.username))
+      .then((data) => {setName(data.user)})
       .catch((error) => console.error("Error fetching funds:", error));
 
     setTimeout(() => {

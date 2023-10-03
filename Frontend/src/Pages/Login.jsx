@@ -42,23 +42,21 @@ const payload={email,password}
     .then(res=>res.json())
     .then((res)=>{
       localStorage.setItem("token",res.token)
-    
     } )
     .catch(err=>console.log(err))
-
-    const token=localStorage.getItem("token")
-
-    if(token==undefined){
-      toast({
-        title: "failed",
-        description: "Login Failed!",
-        status: "error",
-        position: "top",
-        duration: 4000,
-        isClosable: true,
-      });
-       
-    }else{
+    
+    setTimeout(()=>{
+      const token=localStorage.getItem("token")
+      if(token==undefined){
+        toast({
+          title: "failed",
+          description: "Login Failed!",
+          status: "error",
+          position: "top",
+          duration: 4000,
+          isClosable: true,
+        });
+      }else{
    
 
         setTimeout(() => {
@@ -74,13 +72,7 @@ const payload={email,password}
           isClosable: true,
         });
     }
-
-
-
-
-
-     
-   
+    },3000) 
     }
   return (
     <Stack 
