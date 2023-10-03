@@ -295,18 +295,6 @@ const SignupPage = () => {
             </VStack>
           </form>
         </Box>
-        <Text
-          alignSelf="flex-end"
-          position="absolute"
-          bottom="10px"
-          right="10px"
-          fontSize="sm"
-          color="gray.500"
-          textAlign="right"
-        >
-          By signing up, you agree to the DonateForChange terms of service and
-          privacy notice.
-        </Text>
       </Box>
     </Flex>
   );
