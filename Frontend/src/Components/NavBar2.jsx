@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import logo from "../Images/DonateForChange_logo-removebg-preview.png";
-import LogoutButton from "../Components/LogOut"
+import logo from "../Images/modlogo.png";
+import LogoutButton from "../Components/LogOut";
 import {
   Box,
   Flex,
@@ -20,6 +20,7 @@ import {
   MenuItem,
 } from "@chakra-ui/react";
 import { FaSearch, FaBars } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 function Navbar() {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
@@ -29,9 +30,8 @@ function Navbar() {
   const toggleDrawer = () => {
     setIsDrawerOpen(!isDrawerOpen);
   };
-let isToken=localStorage.getItem('token')
+  let isToken = localStorage.getItem("token");
   useEffect(() => {
-    
     const handleScroll = () => {
       if (window.scrollY > 0) {
         setIsSticky(true);
@@ -51,21 +51,22 @@ let isToken=localStorage.getItem('token')
   };
 
   return (
-    <Box 
-      bg="pink.100"
+    <Box
+      bg={isSticky ? "#eef3ead8" : "#dee3da54"}
       py={3}
       px={4}
-      w={isSticky ? "100%" : "80%"}
-      marginTop={isSticky ? 0 : "5"}
-      position={isSticky ? "sticky" : "static"}
+      w={isSticky ? "100%" : "83%"}
+      paddingLeft={isSticky ? "15%" : 0}
+      marginTop={isSticky ? 0 : "3%"}
+      position={isSticky ? "sticky" : "fixed"}
       top={0}
-      zIndex={1000}
-      marginLeft="auto"
-      marginRight="auto"
+      zIndex={9999}
+      marginLeft={isSticky ? 0 : "13%"}
+      height="11vh"
       borderRadius={isSticky ? 0 : "50"}
     >
       <Center>
-        <Flex justify="space-between" align="center">
+        <Flex justify="space-evenly" align="center">
           <Flex align="center">
             <IconButton
               icon={<FaBars />}
@@ -91,15 +92,25 @@ let isToken=localStorage.getItem('token')
           <Box>
             {/* Your logo goes here */}
             <Center>
-              <img src={logo} alt="Logo" width="10%" />
+              <img src={logo} alt="Logo" width="40%"  />
             </Center>
           </Box>
           <Flex align="center">
             <Button variant="outline" display={{ base: "none", md: "block" }}>
               How it works
             </Button>
-            {isToken?( <LogoutButton/>):<Button ml={3} variant="outline"   display={{ base: "none", md: "block" }}>Sign In</Button>}
-              
+            {isToken ? (
+              <LogoutButton />
+            ) : (
+              <Button
+                ml={3}
+                variant="outline"
+                display={{ base: "none", md: "block" }}
+              >
+                Sign In
+              </Button>
+            )}
+
             <Button
               ml={3}
               colorScheme="teal"
@@ -116,9 +127,9 @@ let isToken=localStorage.getItem('token')
         <DrawerContent>
           <DrawerCloseButton />
 
-          <DrawerBody>
+          <DrawerBody bg="green.500">
             <Menu>
-              <List>
+              <List marginTop="50%">
                 <MenuItem onClick={toggleDrawer}>Search</MenuItem>
                 <MenuItem onClick={toggleDrawer}>For Charities</MenuItem>
                 <MenuItem onClick={toggleDrawer}>How it works</MenuItem>
