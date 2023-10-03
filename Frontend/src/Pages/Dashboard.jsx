@@ -27,7 +27,7 @@ const Dashboard = () => {
 const[editfund,setEditFund]=useState(0)
 const handleedit=(id)=>{
   console.log(id)
-  fetch(`http://localhost:8080/funds/update/${id}`,{
+  fetch(`https://donateforchangeapi.onrender.com/funds/update/${id}`,{
     method:"PATCH",
     headers: {
         "Content-Type": "application/json",
@@ -45,7 +45,7 @@ const handleedit=(id)=>{
 
 }
   useEffect(() => {
-    fetch('http://localhost:8080/funds/private',{
+    fetch('https://donateforchangeapi.onrender.com/funds/private',{
       method:"GET",
       headers: {
           "Content-Type": "application/json",

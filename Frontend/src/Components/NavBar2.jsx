@@ -40,10 +40,13 @@ function Navbarrr() {
     localStorage.removeItem("token");
     settoken("");
   };
-  useEffect(() => {
-    fetch("http://localhost:8080/users/", {
-      method: "GET",
-      headers: {
+
+useEffect(()=>{
+
+  fetch(' https://donateforchangeapi.onrender.com/users/',{
+    method:"GET",
+    headers: {
+
         "Content-Type": "application/json",
         Authorization: `Bearer ${localStorage.getItem("token")}`,
       },

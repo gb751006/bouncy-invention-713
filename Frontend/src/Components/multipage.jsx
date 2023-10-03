@@ -300,7 +300,7 @@ export default function Multistep() {
     }); 
   }
   const handlesumbit=()=>{
-    fetch("http://localhost:8080/funds/add",{
+    fetch("https://donateforchangeapi.onrender.com/funds/add",{
       method:"POST",
       headers: {
           "Content-Type": "application/json",

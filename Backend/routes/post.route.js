@@ -21,15 +21,12 @@ postRouter.post("/add", auth, async (req, res) => {
 
 
 postRouter.get("/", auth, async (req, res) => {
-    const query = req.query;
-
     try {
-        const posts = await PostModel.find(query);
+        const posts = await PostModel.find({"userId":req.body.userId});
         res.status(200).json(posts);
     } catch (error) {
         res.status(400).json({ error: error });
     }
-
 })
 
 postRouter.patch("/update/:id", auth, async (req, res) => {

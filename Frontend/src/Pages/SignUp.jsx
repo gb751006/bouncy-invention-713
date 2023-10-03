@@ -94,7 +94,7 @@ const SignupPage = () => {
 
     // Send a POST request to your server with the user data
     try {
-      const response = await fetch("http://localhost:8080/users/register", {
+      const response = await fetch(" https://donateforchangeapi.onrender.com/users/register", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
