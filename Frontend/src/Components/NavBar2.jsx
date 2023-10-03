@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { FaUserCircle } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import logo from "../Images/DonateForChange_logo-removebg-preview.png";
 import LogoutButton from "../Components/LogOut"
@@ -19,6 +20,7 @@ import {
   MenuList,
   List,
   MenuItem,
+  Text,
 } from "@chakra-ui/react";
 import { FaSearch, FaBars } from "react-icons/fa";
 
@@ -51,7 +53,7 @@ useEffect(()=>{
       }
   })
     .then((response) => response.json())
-    .then((data) => console.log(data))
+    .then((data) => setName(data.username))
     .catch((error) => console.error('Error fetching funds:', error));
 
   setTimeout(() => {
@@ -125,9 +127,10 @@ useEffect(()=>{
             </Center>
           </Box>
           <Flex align="center">
-            <Button variant="outline" display={{ base: "none", md: "block" }}>
-              How it works
-            </Button>
+         {name? <FaUserCircle  />:null}
+
+<Text fontWeight={"bold"} >{name}</Text>
+
             {isToken?( <LogoutButton  handleLogout={handleLogout}/>):<Button ml={3} variant="outline" colorScheme="teal"  display={{ base: "none", md: "block" }}  >
               <Link to={"/login"}>SignIn</Link>
               </Button>}
