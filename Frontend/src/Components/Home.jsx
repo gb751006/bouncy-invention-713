@@ -8,11 +8,12 @@ import Assure from "../Pages/Assures";
 import Bannercard from "../Pages/Bannercard";
 import Details from "../Pages/Details";
 import Bottom from "../Pages/Bottom";
+import Navbarrr from "../Components/NavBar2";
 
 const Home = () => {
   return (
     <DIV>
-      <Navbar />
+      <Navbarrr />
       <section className="hero">
         <div className="content">
           <h1>Donate For Change.</h1>
@@ -202,7 +203,7 @@ const DIV = styled.section`
       width: 100%;
     }
   }
-  @media screen (min-width: 480px)and (max-width: 930px) {
+  @media screen and (min-width: 480px)and (max-width: 930px) {
     .catMainSec,
     .abtMSec,
     .arrangeSec {
