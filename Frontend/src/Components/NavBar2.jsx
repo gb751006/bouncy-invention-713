@@ -21,7 +21,7 @@ import {
 } from "@chakra-ui/react";
 import { FaSearch, FaBars } from "react-icons/fa";
 
-function Navbar() {
+function Navbarrr() {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const [isSticky, setIsSticky] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -133,4 +133,4 @@ let isToken=localStorage.getItem('token')
   );
 }
 
-export default Navbar;
+export default Navbarrr;
