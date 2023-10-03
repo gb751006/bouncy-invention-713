@@ -5,6 +5,7 @@ import Navbar from "./Components/Navbar";
 import Footer from "./Components/Footer";
 import AllRoutes from "./Routes/AllRoutes";
 import { ChakraProvider } from "@chakra-ui/react";
+import Navbarrr from "./Components/NavBar2";
 
 function App() {
   return (

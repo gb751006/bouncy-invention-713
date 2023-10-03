@@ -15,18 +15,21 @@ import {
   Image,
   InputGroup,
   InputRightElement,
+  Toast,
+  useToast,
 } from '@chakra-ui/react'
 import Navbar from '../Components/Navbar'
 
 
 export default function LoginPage() {
+  const toast=useToast()
   const navigate=useNavigate()
     const [showPassword, setShowPassword] = useState(false)
     
     const [email,setEmail]=useState("")
     const [password,setPassword]=useState("")
 const payload={email,password}
-   
+  //  hdjkfhgjk
     const handleSubmit=()=>{
       fetch("http://localhost:8080/users/login",{
         method:"POST",
@@ -36,11 +39,47 @@ const payload={email,password}
           body:JSON.stringify(payload)
     })
     .then(res=>res.json())
-    .then(res=>
-      localStorage.setItem("token",res.token),
-      navigate("/")
-      )
+    .then((res)=>{
+      localStorage.setItem("token",res.token)
+    
+    } )
     .catch(err=>console.log(err))
+
+    const token=localStorage.getItem("token")
+
+    if(token==undefined){
+      toast({
+        title: "failed",
+        description: "Login Failed!",
+        status: "error",
+        position: "top",
+        duration: 4000,
+        isClosable: true,
+      });
+       
+    }else{
+   
+
+        setTimeout(() => {
+          navigate("/")
+        }, 3000);
+  
+        toast({
+          title: "Success",
+          description: "Login successful!",
+          status: "success",
+          position: "top",
+          duration: 4000,
+          isClosable: true,
+        });
+    }
+
+
+
+
+
+     
+   
     }
   return (
     <Stack 

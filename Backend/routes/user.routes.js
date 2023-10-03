@@ -4,6 +4,7 @@ const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const { UserModel } = require("../model/user.model");
 const { blacklistTokenModel } = require("../model/blacklist.model");
+const { auth } = require("../middleware/auth.middleware");
 
 const userRouter = express.Router();
 
@@ -31,6 +32,8 @@ userRouter.post("/register", (req, res) => {
 
 })
 
+
+
 userRouter.post("/login", async (req, res) => {
     const { email, password } = req.body;
 
@@ -48,6 +51,10 @@ userRouter.post("/login", async (req, res) => {
         res.status(400).json({ "error": error })
     }
 
+})
+
+userRouter.get("/",auth,(req,res)=>{
+    res.status(200).json({username:req.body.username})
 })
 
 userRouter.get("/logout", async (req, res) => {
