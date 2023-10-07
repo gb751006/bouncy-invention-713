@@ -12,7 +12,7 @@ function LogoutButton({handleLogout}) {
 
   return (
     <Button onClick={handleLogout} ml={3}
-    colorScheme="teal" // Use a different color for logout
+    colorScheme="green" // Use a different color for logout
      >Logout</Button>
   );
 }

@@ -31,49 +31,58 @@ export default function LoginPage() {
     const [password,setPassword]=useState("")
 const payload={email,password}
   //  hdjkfhgjk
-    const handleSubmit=()=>{
-      fetch("https://donateforchangeapi.onrender.com/users/login",{
-        method:"POST",
-        headers: {
-            "Content-Type": "application/json",
-          },
-          body:JSON.stringify(payload)
+  const handleSubmit = () => {
+    fetch("https://donateforchangeapi.onrender.com/users/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(payload),
     })
-    .then(res=>res.json())
-    .then((res)=>{
-      localStorage.setItem("token",res.token)
-    } )
-    .catch(err=>console.log(err))
-    
-    setTimeout(()=>{
-      const token=localStorage.getItem("token")
-      if(token==undefined){
+      .then((res) => res.json())
+      .then((res) => {
+        localStorage.setItem("token", res.token);
+  
+        if (res.token) {
+          // Login successful
+          toast({
+            title: "Success",
+            description: "Login successful!",
+            status: "success",
+            position: "top",
+            duration: 4000,
+            isClosable: true,
+          });
+  
+          setTimeout(() => {
+            navigate("/");
+          }, 3000);
+        } else {
+          // Login failed
+          toast({
+            title: "Failed",
+            description: "Login failed! Please check your email and password.",
+            status: "error",
+            position: "top",
+            duration: 4000,
+            isClosable: true,
+          });
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+  
         toast({
-          title: "failed",
-          description: "Login Failed!",
+          title: "Failed",
+          description: "Login failed! Please try again later.",
           status: "error",
           position: "top",
           duration: 4000,
           isClosable: true,
         });
-      }else{
-   
-
-        setTimeout(() => {
-          navigate("/")
-        }, 3000);
+      });
+  };
   
-        toast({
-          title: "Success",
-          description: "Login successful!",
-          status: "success",
-          position: "top",
-          duration: 4000,
-          isClosable: true,
-        });
-    }
-    },3000) 
-    }
   return (
     <Stack 
     

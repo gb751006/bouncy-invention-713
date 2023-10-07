@@ -137,7 +137,7 @@ useEffect(()=>{
               <Button
                 ml={3}
                 variant="outline"
-                colorScheme="teal"
+                colorScheme="green"
                 display={{ base: "none", md: "block" }}
               >
                 <Link to={"/login"}>SignIn</Link>
@@ -146,7 +146,7 @@ useEffect(()=>{
 
             <Button
               ml={3}
-              colorScheme="teal"
+              colorScheme="green"
               display={{ base: "none", md: "block" }}
             >
               <Link to={"/donationform"}> Start a GoFund</Link>
