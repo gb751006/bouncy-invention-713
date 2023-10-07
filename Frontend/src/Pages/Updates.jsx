@@ -39,7 +39,7 @@ const Updates = () => {
     const timestamp = new Date().toISOString();
     const postData = { post: status, image: imageURL, timestamps: timestamp };
 
-    fetch("http://localhost:8080/posts/add", {
+    fetch("https://donateforchangeapi.onrender.com/posts/add", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -58,7 +58,7 @@ const Updates = () => {
   };
 
   const handleDeleteStatus = (updateId) => {
-    fetch(`http://localhost:8080/posts/delete/${updateId}`, {
+    fetch(`https://donateforchangeapi.onrender.com/posts/delete/${updateId}`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
